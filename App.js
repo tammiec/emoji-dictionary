@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 
+import EmojiDict from './src/components/EmojiDict';
+
 export default class App extends Component {
   render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.instructions}>Hello World!</Text>
-      </View>
-    );
+    return <EmojiDict />;
   }
 }
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, FlatList, Text, StyleSheet } from 'react-native';
 
 class EmojiDict extends Component {
   state = {
@@ -11,7 +11,15 @@ class EmojiDict extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>{this.state['😃']}</Text>
+        <FlatList
+          contentContainerStyle={styles.container}
+          data={[
+            { key: '😃', value: '😃 Smiley' },
+            { key: '🚀', value: '🚀 Rocket' },
+            { key: '⚛️', value: '⚛️ Atom Symbol' }
+          ]}
+          renderItem={({ item }) => <Text>{item.value}</Text>}
+        />
       </View>
     );
   }
@@ -24,3 +32,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
+
+export default EmojiDict;
